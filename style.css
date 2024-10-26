@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins' ,sans-serif;
+}
+:root{
+    --bg-color: black;
+    --snd-bg-color: rgb(215, 15, 49);
+    --text-color: #fff;
+    --main-color: rgb(253, 91, 16);
+}
+ html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+ }
+body{
+    background:rgba(167, 164, 164, 0.678);          /*url("img/background-img.jpg") no-repeat*/
+   color: white;
+   display: flex;
+   flex-direction: column;
+   max-width: 1440px;
+   margin: 0 auto;
+   min-height: 100vh;
+   height: -weblit-fill-available;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 9%;
+    background:  var(--bg-color);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.logo{
+    width: 50px;
+    margin-left: -50px;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+.download-btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    color: rgb(233, 73, 100);
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    font-weight: 1.6rem;
+    transition: all 0.5s ease;
+}
+.download-btn:hover{
+    background: var(--snd-bg-color);
+    color: var(--text-color);
+    box-shadow: 0 0 18 px var(--main-color);
+}
+#sideMenu{
+    display: flex;
+}
+#sideMenu a{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid transparent;
+}
+#sideMenu a:hover,
+#sideMenu a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* ----home----*/
+.home-content{
+    display: inline-block;
+    border:2px solid black ;
+    box-shadow: 20px 20px rgb(253, 91, 16);
+    border-radius: 20px;
+    background: black;
+    color: white;
+    width: 550px;
+    height: 350px;
+    text-align: center;
+    margin-top: 15%;
+    padding-top: 30px;
+    margin-left: 80px;
+}
+.home-content h2{
+    text-align: justify;
+    font-size: 25px;
+    padding-left: 40px;
+}
+.home-content h1{
+    font-size: 45px;  
+}
+.last-name{
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.home-content h1 span{
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(253, 91, 16);
+}
+
+.home-content p span{
+    color: rgb(215, 15, 49);
+    font-size: 20px;
+}
+.home-image{
+   position: absolute;
+   width: 650px;
+   height: 550px; 
+   margin-left:30px;
+   margin-top: 80px;
+}
+#about{
+    padding-top: 150px;
+}
+.topic{
+    margin-top: 30px;
+    margin-left: 500px;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+.profile-photo{
+    margin-left: 40px;
+    margin-top: 30px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 40px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+} 
+.about-col2{
+    border: 1px solid black;
+    box-shadow: 20px 20px rgb(253, 91, 16);
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 45%;  
+    padding-bottom: 10px;
+}
+.sub-title{
+    font-size: 40px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.about-col2 .underline{
+    border: 1px solid white;
+    width: 90%;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.about-col2 p{
+    padding: 20px 20px 10px 30px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 30px 40px;
+}
+.tab-links{
+margin-right: 50px;
+font-size: 18px;
+font-weight: 500;
+cursor: pointer;
+position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(215, 15, 49);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 100%;
+ }
+ .tab-contents ul li{
+    list-style: none;
+    margin: 10px 50px;
+}
+
+.tab-contents ul li span {
+    color: rgb(247, 95, 234);
+    font-size: 14px;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+    font-size: 14px;
+}
+
+.slider-container{
+    position: relative;
+    box-shadow: rgba(13, 252, 252, 0) 0px 0px 20px
+}
+.slide{
+   transition: 1s;
+   margin-left: 65px;
+   border: 1px solid  rgb(215, 15, 49);
+   width: 80%;
+   height: 170px;
+   border-radius: 10px;
+}
+
+.slide h2{
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.buttonNav{
+    text-align: center;
+    margin-top: 15px;
+}
+
+#prev, #next {
+       cursor: pointer;
+       position: relative;
+       margin-right: 10px;
+}
+
+.skillSets{
+    display: grid;
+   grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 300;
+    margin:10px 0px 10px 10px;
+}
+
+.skill-item{
+    border: none;
+    width: 18%;
+    }
+
+.skill-item img{
+    color: #ae374f;
+} 
+
+.skill-item i {
+    margin-bottom: 15px;
+}
+
+
+/* ---------------- Services -----------------------  */
+    
+
+#service{
+    padding-top: 80px;
+}
+.container .sub-title{
+   text-align: center;   
+}
+
+.service-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.service-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.service-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.service-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.service-list div a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.service-list div:hover{
+    background: rgb(215, 15, 49);
+    transform: translateY(-10px);
+}
+
+/* ---------------- Contact -----------------------  */
+
+.contant-head{
+    margin-top: 80px;
+}
+.contant-head .sub-title{
+    text-align: center;
+}
+.contain{
+    margin-top: 20px;
+    margin-left: 30px;
+    border: 1px solid rgba(167, 164, 164, 0.678);
+    border-radius: 20px;
+    background:black;
+    width: 95%;
+    height: 500px;
+}
+.contact-left {
+    border: 0px solid black;
+    width: 700px;
+    height: 400px;
+    margin: 20px;
+    display: inline-block;
+}
+form input, form textarea{
+    width: 600px;
+    border: 0;
+    outline: none;
+    background: rgb(236, 211, 164);
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 40px;
+    color: black;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.button{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid rgb(215, 15, 49);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.button:hover{
+    background: rgb(215, 15, 49);
+}
+
+.button.button3{
+    background: rgb(215, 15, 49);
+    padding: 14x 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 250px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.button.button3:hover{
+    background: black;
+    transform: translateY(.1px);
+}
+.contact-right{
+    display: inline-block;
+    position: absolute;
+    border: 0px solid black;
+    width: 500px;
+    height: 300px;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-left: 70px;
+    
+}
+.contact-right p{
+    margin-top: 10px;
+}
+
+.contact-right p i{
+    color: rgb(215, 15, 49);
+    margin-right: 15px;
+    line-height: 40px;
+    font-size: 40px;
+}
+.contact-right .email1{
+    font-size: 25px;
+    color: blue;
+}
+.contact-right .phone1{
+font-size: 25px;
+   color: rgb(212, 27, 182);
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: grey;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: rgb(215, 15, 49);
+    transform: translateY(-5px);
+}
+
+.button.button2{
+    display: inline-block;
+    background: black;
+    font-size: 20px;
+}
+.button.button2:hover{
+     background:  rgb(215, 15, 49);
+}
+.copyright{
+    margin-top: 45px;
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(45, 44, 44);
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: 300px;
+}
+/* msg  */
+
+#msg{
+    color: #33ba1b;
+    margin-top: 0px;
+    margin-left: 20px;
+    display: block;
+}
+/* menu hide */
+
+
+#openmenu{
+    margin-left: 300px;
+    margin-top: -50px;
+}
+#closemenu{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+/* --- css for small screeen  */
+
+@media screen and (max-width:617px){
+
+    #menu-icon{
+        display: block;
+        margin-right: 10px;
+    }
+    #sideMenu{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 180px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: rgb(215, 15, 49);
+        border-radius: 10px;
+        transition: all 0.5s ease;
+    }
+    #sideMenu a{
+        display: block;
+        padding: 17px;
+        font-size: 22px;
+    }
+    #sideMenu.active{
+        right: 0;
+    }
+    #sideMenu a:hover,
+#sideMenu a.active{
+    color: var(--bg-color);
+    border-bottom: 3px solid var(--text-color);
+}
+    header{
+        padding: 0.5rem 3%;
+    }
+    .logo{
+        margin-left: 20px;
+    }
+#home{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.home-content{
+    width: 400px;
+    height: 250px;
+    margin-left:80px; 
+}
+.home-content h2{
+    font-size: 20px;
+}
+.home-content h1{
+    font-size: 30px;  
+}    
+.home-content p span{
+    font-size: 15px;
+}
+.home-image{
+    position: sticky;
+    width: 500px;
+    height: 500px; 
+    margin-left: 80px;
+ }
+ #about{
+    display: flex;
+    flex-direction: column;
+    margin-top: -100px;
+}
+.topic{
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
+.profile-photo{   
+    position: sticky;
+    width: 400px;
+    height: 400px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+.sub-title{
+    font-size: 30px;
+}
+.about-col2{
+    margin-top: 10px;
+    margin-left: 80px;
+    width: 420px;
+}
+.about-col2 .underline{
+    font-size: 10px;
+    margin-left: 20px;
+}
+.about-col2 p{
+    font-size: 12px;
+    margin-bottom: -20px;
+}
+.about-col2 .tab-titles{
+    margin-top: 20px;
+}
+.tab-contents ul li span {
+   font-size: 11px;
+}
+.tab-contents.active-tab li{
+    font-size: 14px;
+}
+.slide{
+    margin-left: 45px;
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+}
+ #service{
+    margin-top: 20px;
+    position: sticky;
+ }
+ .service-list{
+    width: 300px;
+    margin-left: 150px;
+ }
+.contant-head{
+    margin-top: 60px;
+}
+.contact-left,.contact-right{
+    flex-basis: 100%;
+}
+.contain {
+    margin-left: 100px;
+    border: none;
+    width: 400px;
+}
+.contact-left{
+    display: block;
+    padding-top: 30px;
+}
+form input , form textarea{
+   display: block;
+   margin-left: 30px;
+   width: 300px;
+   padding-top: 10px;
+}
+.button.button3{
+  margin-left: 100px;
+}
+.contact-right{
+    position: sticky;
+    margin-left: -40px;
+    margin-top: 80px;
+}
+.contact-right p i{
+    color: rgb(215, 15, 49);
+    font-size: 25px;
+}
+.contact-right .email1,.contact-right .phone1{
+    font-size: 20px;   
+}
+.copyright{
+    margin-top: 360px ;
+    font-size: 14px;
+}
+}
